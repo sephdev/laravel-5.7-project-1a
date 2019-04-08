@@ -32,4 +32,23 @@ class ProjectsController extends Controller
         // json
         // return request()->all();
     }
+
+    public function edit($id)
+    {
+        $project = Project::find($id);
+        return view('projects.edit', compact('project'));
+    }
+
+    
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {
+
+    }
+
+
 }
