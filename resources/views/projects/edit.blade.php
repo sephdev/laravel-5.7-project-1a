@@ -17,6 +17,7 @@
 
         <div class="field">
             <label class="label" for="description">Description</label>
+            
                 <div class="control">
                     <textarea name="description" class="textarea" id="">{{ $project->description }}</textarea>
                 </div>
