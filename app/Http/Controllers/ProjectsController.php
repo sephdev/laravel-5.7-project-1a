@@ -34,13 +34,11 @@ class ProjectsController extends Controller
     {
         return view('projects.edit', compact('project'));
     }
-
     
     public function update(Project $project)
     {
         $project->update(request(['title', 'description']));
         return redirect('/projects');
-       
     }
 
     public function destroy(Project $project)
@@ -48,6 +46,4 @@ class ProjectsController extends Controller
         $project->delete();
         return redirect('/projects');
     }
-
-
 }
