@@ -16,7 +16,6 @@ class ProjectsController extends Controller
     public function show(Project $project)
     {        
         return $project;
-
         return view('projects/show', compact('project'));
     }
 
@@ -28,23 +27,7 @@ class ProjectsController extends Controller
     public function store()
     {
         Project::create(request(['title', 'description']));
-
         return redirect('/projects');
-
-        // Project::create([
-        //     'title' => request('title'),
-        //     'description' => request('description')
-        // ]);
-
-        // $project = new Project();
-
-        // $project->title = request('title');
-        // $project->description = request('description');
-
-        // $project->save();
-        
-        // json
-        // return request()->all();
     }
 
     public function edit(Project $project)
@@ -56,20 +39,13 @@ class ProjectsController extends Controller
     public function update(Project $project)
     {
         $project->update(request(['title', 'description']));
-
         return redirect('/projects');
-
-        // $project->title = request('title');
-        // $project->description = request('description');
-        // $project->save();        
+       
     }
 
     public function destroy(Project $project)
     {
-        // Project::findOrFail($id)->delete();
-
         $project->delete();
-
         return redirect('/projects');
     }
 
