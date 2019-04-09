@@ -5,6 +5,8 @@
 
     <form method="POST" action="/projects/{{ $project->id }}">
         {{ method_field('PATCH') }}
+        {{ csrf_field() }}
+
         <div class="field">
             <label class="label" for="">Title</label>
 
@@ -16,7 +18,7 @@
         <div class="field">
             <label class="label" for="description">Description</label>
                 <div class="control">
-                    <textarea name="description" class="textarea" id="">{{ $project->description}}</textarea>
+                    <textarea name="description" class="textarea" id="">{{ $project->description }}</textarea>
                 </div>
         </div>
 
