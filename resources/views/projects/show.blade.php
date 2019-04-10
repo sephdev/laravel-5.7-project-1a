@@ -14,8 +14,11 @@
         <div class="box">
             @foreach ($project->tasks as $task)
                 <div>
-                    <form method="POST" action="/tasks/{{ $task->id }}">
-                        @method('PATCH')
+                    <form method="POST" action="/completed-tasks/{{ $task->id }}">
+                        @if ($task->completed)
+                            @method('DELETE')
+                        @endif
+                        
                         @csrf
 
                         <label for="completed" class="checkbox {{ $task->completed ? 'is-complete' : '' }}">
